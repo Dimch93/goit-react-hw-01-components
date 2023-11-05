@@ -10,9 +10,9 @@ export const App = () => {
         // height: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101',
+        // alignItems: 'center',
+        // fontSize: 40,
+        // color: '#010101',
       }}
     >
       <ul>
@@ -21,8 +21,7 @@ export const App = () => {
         </li>
 
         <li>
-          <h2 class="title">Upload stats</h2>
-          <Statistics />
+          <Statistics title="Upload stats" />
         </li>
 
         <li>
@@ -30,19 +29,7 @@ export const App = () => {
         </li>
 
         <li>
-          <table class="transaction-history">
-            <thead>
-              <tr>
-                <th>Type</th>
-
-                <th>Amount</th>
-
-                <th>Currency</th>
-              </tr>
-            </thead>
-
-            <TransactionHistory />
-          </table>
+          <TransactionHistory />
         </li>
       </ul>
     </div>

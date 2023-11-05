@@ -1,32 +1,26 @@
 import transactions from './transactions.json';
+import css from './transactions.module.css';
 
 export const TransactionHistory = () => {
-  return transactions.map(el => (
-    // <table class="transaction-history">
-    //   <thead>
-    //     <tr>
-    //       <th>Type</th>
+  return (
+    <table className={css.transactions}>
+      <thead>
+        <tr>
+          <th>Type</th>
+          <th>Amount</th>
+          <th>Currency</th>
+        </tr>
+      </thead>
 
-    //       <th>Amount</th>
-
-    //       <th>Currency</th>
-    //     </tr>
-    //   </thead>
-
-    <tbody key={el.id}>
-      <tr>
-        <td>{el.type}</td>
-
-        <td>{el.amount}</td>
-
-        <td>{el.currency}</td>
-      </tr>
-      <tr>
-        <td>Withdrawal</td>
-        <td>85</td>
-        <td>USD</td>
-      </tr>
-    </tbody>
-    // </table>
-  ));
+      <tbody>
+        {transactions.map(({ id, type, amount, currency }) => (
+          <tr key={id}>
+            <td>{type}</td>
+            <td>{amount}</td>
+            <td>{currency}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
 };

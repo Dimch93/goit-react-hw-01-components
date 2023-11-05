@@ -1,14 +1,21 @@
 import data from './data.json';
+import css from './statistics.module.css';
 
-export const Statistics = () => {
-  return data.map(el => (
-    <div class="statistics" key={el.id}>
-      <ul class="stat-list">
-        <li class="item">
-          <span class="label">{el.label}</span>
-          <span class="percentage">{el.percentage}</span>
-        </li>
+export const Statistics = ({ title }) => {
+  return (
+    <section className={css.statistics}>
+      {title && <h2 className={css.title}>{title}</h2>}
+
+      <ul className={css.statList}>
+        {data.map(({ id, label, percentage }) => {
+          return (
+            <li className={css.item} key={id}>
+              <span className={css.label}>{label}</span>
+              <span className={css.percentage}>{percentage} %</span>
+            </li>
+          );
+        })}
       </ul>
-    </div>
-  ));
+    </section>
+  );
 };

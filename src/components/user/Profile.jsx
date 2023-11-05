@@ -1,27 +1,28 @@
 import user from './user.json';
+import css from './user.module.css';
 
 export const Profile = () => {
   return (
-    <div class="profile">
-      <div class="description">
-        <img src={user.avatar} alt="User avatar" class="avatar" />
-        <p class="name">{user.username}</p>
-        <p class="tag">{user.tag}</p>
-        <p class="location">{user.location}</p>
+    <div className={css.profile}>
+      <div className={css.description}>
+        <img src={user.avatar} alt="User avatar" className={css.avatar} />
+        <p className={css.name}>{user.username}</p>
+        <p className={css.tag}>{user.tag}</p>
+        <p className={css.location}>{user.location}</p>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity"> {user.stats.followers}</span>
+      <ul className={css.stats}>
+        <li className={css.item}>
+          <span className={css.label}>Followers</span>
+          <span className={css.quantity}> {user.stats.followers}</span>
         </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity"> {user.stats.views}</span>
+        <li className={css.item}>
+          <span className={css.label}>Views</span>
+          <span className={css.quantity}> {user.stats.views}</span>
         </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity"> {user.stats.likes}</span>
+        <li className={css.item}>
+          <span className={css.label}>Likes</span>
+          <span className={css.quantity}> {user.stats.likes}</span>
         </li>
       </ul>
     </div>
